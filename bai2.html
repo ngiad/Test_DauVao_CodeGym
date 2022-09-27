@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // tạo mảng 
+            function ifCheck(num1,num2){
+                if(num1 === num2){
+                return true
+                }
+                return false
+            }
+            function check(num,array){
+                for(let i = 0;i < array.length;i++){
+                if(ifCheck(array[i],num)){
+                    return false
+                }
+                }
+                return true
+            }
+            function ramdom (){
+                let array = []
+                let loop = true
+                while(loop){
+                const num = Math.floor(Math.random() * 100);
+                if(check(num,array)){
+                    array.push(num)
+                }
+                if(array.length === 100){
+                    loop = false
+                }
+                }
+                return array
+            }
+            let numberArray = ramdom()
+            // console.log(numberArray.sort(function(a,b) {return a-b}))
+
+            // bài làm 
+            function evenFilter(array){
+                return array.filter(number => number%2 === 0)
+            }
+
+            console.log(evenFilter(numberArray)) 
+    </script>
+</body>
+</html>
